@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --background: #03060c;
+  --foreground: #e6fbff;
+  --aether-cyan: #00f3ff;
+  --aether-orange: #ff4d00;
+  --aether-panel: rgba(6, 18, 28, 0.55);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 243, 255, 0.12), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(255, 77, 0, 0.08), transparent),
+    var(--background);
+}
+
+.glass-panel {
+  background: var(--aether-panel);
+  border: 1px solid rgba(0, 243, 255, 0.28);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.4) inset,
+    0 8px 32px rgba(0, 0, 0, 0.45);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.35);
+  border-radius: 3px;
+}

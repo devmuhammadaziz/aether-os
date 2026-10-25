@@ -1,0 +1,17 @@
+{
+  "name": "aether-os",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c cyan,magenta \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:web": "npm --prefix web run dev",
+    "dev:api": "cd server && bun run --watch src/index.ts",
+    "build": "npm --prefix web run build",
+    "start": "npm --prefix web run start",
+    "setup": "cd server && bun install && cd ../web && npm install",
+    "setup:prod": "npm --prefix web install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
